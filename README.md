@@ -1,6 +1,6 @@
-# dbar4gun-nixos
+# NixOS-ShootMii
 
-[Dbar4gun](https://github.com/lowlevel-1989/dbar4gun) for NixOS.
+[ShootMii](https://github.com/PointDevice/ShootMii) for NixOS.
 
 ## Installation
 
@@ -16,8 +16,8 @@ Then run `sudo nixos-rebuilt test`, then create a `flake.nix` file in your NixOS
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; # This should match the version of NixOS you want to use
 
-    dbar4gun-nixos = {
-      url = "github:PointDevice/dbar4gun-nixos";
+    nixos-shootmii = {
+      url = "github:PointDevice/nixos-shootmii";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -26,14 +26,14 @@ Then run `sudo nixos-rebuilt test`, then create a `flake.nix` file in your NixOS
    {
       self,
       nixpkgs,
-      bdar4gun-nixos,
+      nixos-shootmii,
     }:
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           modules = [
             ./configuration.nix
-            dbar4gun-nixos.nixosModules.default
+            nixos-shootmii.nixosModules.default
           ];
         };
       };
@@ -41,7 +41,7 @@ Then run `sudo nixos-rebuilt test`, then create a `flake.nix` file in your NixOS
 }
 ```
 
-Then you can add `xivlauncher-rb` to `configuration.nix` like so:
+Then you can add `ShootMii` to `configuration.nix` like so:
 
 ```nix
 {
@@ -53,7 +53,7 @@ Then you can add `xivlauncher-rb` to `configuration.nix` like so:
 ...
 
 environment.systemPackages = [
-  dbar4gun
+  ShootMii
 ];
 ```
 
@@ -62,4 +62,3 @@ Now run `sudo nix flake update` in your NixOS configuration directory and rebuil
 ## Credits
 
 * [nur-packages-template](https://github.com/nix-community/nur-packages-template) for providing the original template for a Nix Flake
-* [drakon64](https://github.com/drakon64) for creating the original repo for xivlauncher-rb for nixos, which this is forked from
