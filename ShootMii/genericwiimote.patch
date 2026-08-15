@@ -1,0 +1,22 @@
+diff --git a/dbar4gun/monitor.py b/dbar4gun/monitor.py
+index 67fa80f..3968fae 100644
+--- a/dbar4gun/monitor.py
++++ b/dbar4gun/monitor.py
+@@ -13,7 +13,7 @@ class Monitor(object):
+     def __first_scan(self):
+         devices = self.__context.list_devices(subsystem="hidraw")
+         for device in devices:
+-            if device.get("ID_MODEL_FROM_DATABASE") != "Wii Remote Controller RVL-003" \
++            if "04E8:7021" not in device.get("DEVPATH")  \
+                     and device.parent and device.parent.driver != "wiimote":
+                 continue
+
+@@ -26,7 +26,7 @@ class Monitor(object):
+
+         self.__monitor.filter_by(subsystem="hidraw")
+         for action, device in self.__monitor:
+-            if device.get("ID_MODEL_FROM_DATABASE") != "Wii Remote Controller RVL-003" \
++            if "04E8:7021" not in device.get("DEVPATH")  \
+                     and device.parent and device.parent.driver != "wiimote":
+                 continue
+                 

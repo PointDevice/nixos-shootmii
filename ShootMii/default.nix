@@ -22,6 +22,7 @@ python313Packages.buildPythonApplication rec {
     rev = "a324898ee87f8316e9773207f7445b4cc8446c62";
     hash = "sha256-UwM+xM6G8ANBDjlRrCfe8hXND14LrYLVwMR6kFCrUeI=";
   };
+  patches = [./genericwiimote.patch];
 
   build-system = [ python313Packages.setuptools ];
   dependencies = with python313Packages; [
