@@ -11,13 +11,14 @@ let
 in
 python313Packages.buildPythonApplication rec {
   pname = "ShootMii";
-  version = "0.18.2";
+  #version = "0.18.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "PointDevice";
     repo = "ShootMii";
-    tag = "${version}";
+    #tag = "${version}";
+    branch = "main";
     hash = "sha256-82OIzIammz5EuDcsWRzhevfuXQMRRYJ5nsXWTx+Pnis=";
   };
 
