@@ -11,15 +11,16 @@ let
 in
 python313Packages.buildPythonApplication rec {
   pname = "ShootMii";
-  #version = "0.18.2";
+  version = "0.18.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "PointDevice";
     repo = "ShootMii";
     #tag = "${version}";
-    branch = "main";
-    hash = "sha256-82OIzIammz5EuDcsWRzhevfuXQMRRYJ5nsXWTx+Pnis=";
+    #branch = "main";
+    rev = "a324898ee87f8316e9773207f7445b4cc8446c62";
+    hash = "sha256-UwM+xM6G8ANBDjlRrCfe8hXND14LrYLVwMR6kFCrUeI=";
   };
 
   build-system = [ python313Packages.setuptools ];

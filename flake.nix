@@ -14,7 +14,7 @@
     {
       packages.${system} = rec {
         ShootMii = pkgs.callPackage ./ShootMii { };
-        default = dbar4gun;
+        default = ShootMii;
       };
 
       overlays.default = import ./overlay.nix;
