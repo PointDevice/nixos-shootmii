@@ -20,7 +20,7 @@ python313Packages.buildPythonApplication rec {
     #tag = "${version}";
     #branch = "main";
     rev = "98016607a334e6abec2f940a69a4de43c21e3fd6";
-    hash = "sha256-V2sPqwMD/csWNkaJoWmv74OrW3JJsM8LgHdW2Oi0Gmg=";
+    hash = "sha256-DfrnMyRZZ5c/ovz8WhT79MySLsIX8o+kU5xJ70uGbNw=";
   };
   patches = [./genericwiimote.patch];
 
